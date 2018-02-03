@@ -206,4 +206,7 @@ bindsym $mod+Shift+d exec firefox
 # Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper 
 exec firefox
-exec --no-startup-id i3-msg 'workspace $workspace2; exec gnome-terminal'
+exec --no-startup-id i3-msg 'workspace $workspace2;'
+exec_always ~/.screenlayout/1680x1050.sh
+exec_always redshift -O 4000K
+exec --no-startup-id compton --config ~/.config/compton.conf -b

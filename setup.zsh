@@ -106,3 +106,11 @@ ln -sTv ~/.dotfiles/htop/htoprc ~/.config/htop/htoprc
 # i3
 rm $rmflags ~/.config/i3
 ln -sTv ~/.dotfiles/i3 ~/.config/i3 
+
+# screen layout
+rm $rmflags ~/.screenlayout
+ln -sTv ~/.dotfiles/screenlayout ~/.screenlayout
+
+# screen layout
+rm $rmflags ~/.config/compton.conf
+ln -sTv ~/.dotfiles/compton.conf ~/.config/compton.conf

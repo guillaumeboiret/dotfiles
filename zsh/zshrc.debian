@@ -98,6 +98,7 @@ alias l="ls -oh --group-directories-first"
 alias t="tmux siurce-file ~/.tmux.conf"
 alias i3config="v ~/.config/i3/config"
 alias zshconfig="v ~/.zshrc"
+alias dotconfig="v ~/.dotfiles"
 
 export EDITOR='nvim'
 
