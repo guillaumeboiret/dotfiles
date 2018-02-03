@@ -1,0 +1,2 @@
+#!/bin/zsh
+apt install htop xauth git zsh tmux tree curl wget dnsutils unrar zsh-doc vim-doc nmap zenmap whiptail firefox gnome-terminal xterm xscreensaver feh x11-xserver-utils acpi fontconfig vlc build-essential python3 gnome-calculator zenity file-roller unar rar ttf-mscorefonts-installer gparted  gimp evince zip unzip cmake python-dev xdotool redshift-gtk pavucontrol volumeicon-alsa rsync lxappearance arandr i3 pandoc texlive-latex-recommended

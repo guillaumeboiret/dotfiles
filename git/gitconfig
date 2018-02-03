@@ -1,5 +1,6 @@
 [user]
 	name = guillaume
+	email = guillaume.boiret@gmail.com
 [push]
 	default = simple
 [filter "media"]

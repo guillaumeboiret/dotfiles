@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-scale' '/home/guillaume/Pictures/wallpaper/wallpaper' 
