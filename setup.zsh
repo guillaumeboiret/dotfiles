@@ -114,3 +114,7 @@ ln -sTv ~/.dotfiles/screenlayout ~/.screenlayout
 # screen layout
 rm $rmflags ~/.config/compton.conf
 ln -sTv ~/.dotfiles/compton.conf ~/.config/compton.conf
+
+# feh
+rm $rmflags ~/.fehbg
+ln -sTv ~/.dotfiles/fehbg ~/.fehbg
