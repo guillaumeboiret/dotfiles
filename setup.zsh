@@ -115,6 +115,10 @@ ln -sTv ~/.dotfiles/screenlayout ~/.screenlayout
 rm $rmflags ~/.config/compton.conf
 ln -sTv ~/.dotfiles/compton.conf ~/.config/compton.conf
 
-# feh
-rm $rmflags ~/.fehbg
-ln -sTv ~/.dotfiles/fehbg ~/.fehbg
+# Xresources
+rm $rmflags ~/.Xresources
+ln -sTv ~/.dotfiles/Xresources ~/.Xresources
+
+# Xinit
+rm $rmflags ~/.xinitrc
+ln -sTv ~/.dotfiles/xinitrc ~/.xinitrc
