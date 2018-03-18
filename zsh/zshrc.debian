@@ -28,6 +28,7 @@ alias zshconfig="v ~/.zshrc"
 alias dotconfig="v ~/.dotfiles"
 
 export EDITOR='nvim'
+setxkbmap -layout us -option ctrl:nocaps
 
 # ssh-agent
 # ---------
