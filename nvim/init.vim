@@ -717,8 +717,6 @@ let g:deoplete#sources#go#package_dot = 1
 let g:deoplete#sources#go#pointer = 1
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
-colorscheme tomorrow-night
-
 let g:go_auto_type_info = 1
 
 set updatetime=100
