@@ -105,7 +105,7 @@ ln -sTv ~/.dotfiles/htop/htoprc ~/.config/htop/htoprc
 
 # i3
 rm $rmflags ~/.config/i3
-ln -sTv ~/.dotfiles/i3 ~/.config/i3 
+ln -sTv ~/.dotfiles/i3 ~/.config/i3
 
 # screen layout
 rm $rmflags ~/.screenlayout
@@ -118,3 +118,17 @@ ln -sTv ~/.dotfiles/compton.conf ~/.config/compton.conf
 # feh
 rm $rmflags ~/.fehbg
 ln -sTv ~/.dotfiles/fehbg ~/.fehbg
+
+# export
+#rm $rmflags ~/.export.zsh
+#ln -sTv ~/.dotfiles/zsh/export.zsh ~/.export.zsh
+
+# vscode macOS
+rm $rmflags ~/Library/Application\ Support/Code/User/snippets
+rm $rmflags ~/Library/Application\ Support/Code/User/settings.json
+ln -sv ~/.dotfiles/vscode/snippets ~/Library/Application\ Support/Code/User/
+ln -sv ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+
+
+

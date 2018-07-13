@@ -1,0 +1,44 @@
+// Place your settings in this file to overwrite the default settings
+{
+	"editor.roundedSelection": false,
+	"editor.insertSpaces": false,
+	"editor.formatOnType": true,
+	"editor.renderWhitespace": "all",
+	"editor.scrollBeyondLastLine": false,
+	"editor.minimap.enabled": false,
+	"editor.dragAndDrop": true,
+	// "editor.cursorStyle": "underline-thin",
+	"editor.detectIndentation": true,
+	"files.trimTrailingWhitespace": true,
+	"files.autoSave": "off",
+
+	// External Terminal
+	"terminal.external.osxExec": "iTerm.app",
+	"window.zoomLevel": 0,
+
+	"editor.autoIndent": false,
+
+	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
+	"editor.wrappingIndent": "same",
+
+	"markdown-pdf.quality": 100,
+	"markdown-pdf.emoji": false,
+
+	"git.confirmSync": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.fontAliasing": "antialiased",
+	"workbench.colorTheme": "Visual Studio Dark",
+	"eslint.enable": false,
+	"C_Cpp.intelliSenseEngine": "Default",
+	"explorer.confirmDelete": false,
+	"terminal.integrated.cursorStyle": "underline",
+	"git.autofetch": true,
+	"editor.fontFamily": "UbuntuMonoNerdFontCM-Regular",
+	"editor.fontSize": 17,
+	"editor.tabSize": 8,
+	"workbench.colorCustomizations": {
+		"editorIndentGuide.activeBackground": "#f0f0f049"
+	},
+	"vim.disableExtension": true
+}
