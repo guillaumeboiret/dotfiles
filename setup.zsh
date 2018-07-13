@@ -129,6 +129,10 @@ rm $rmflags ~/Library/Application\ Support/Code/User/settings.json
 ln -sv ~/.dotfiles/vscode/snippets ~/Library/Application\ Support/Code/User/
 ln -sv ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
+# Xresources
+rm $rmflags ~/.Xresources
+ln -sTv ~/.dotfiles/Xresources ~/.Xresources
 
-
-
+# Xinit
+rm $rmflags ~/.xinitrc
+ln -sTv ~/.dotfiles/xinitrc ~/.xinitrc
