@@ -20,10 +20,6 @@
 
 	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
 	"editor.wrappingIndent": "same",
-
-	"markdown-pdf.quality": 100,
-	"markdown-pdf.emoji": false,
-
 	"git.confirmSync": false,
 	"editor.multiCursorModifier": "ctrlCmd",
 	"workbench.iconTheme": "material-icon-theme",
@@ -40,5 +36,6 @@
 	"workbench.colorCustomizations": {
 		"editorIndentGuide.activeBackground": "#f0f0f049"
 	},
-	"vim.disableExtension": true
+	"vim.disableExtension": true,
+	"terminal.integrated.fontSize": 17,
 }
