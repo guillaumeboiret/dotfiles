@@ -41,7 +41,7 @@ alias brewski='brew update && brew upgrade && brew cleanup; brew prune; brew doc
 alias t="tmux source-file ~/.tmux.conf"
 alias i3config="v ~/.config/i3/config"
 alias zshconfig="v ~/.zshrc"
-alias dotconfig="v ~/.dotfiles"
+alias dot="cd ~/.dotfiles"
 
 ## Env
 export EDITOR="/usr/bin/vim"

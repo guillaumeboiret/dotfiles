@@ -21,7 +21,7 @@ if [ "$(uname 2> /dev/null)" = "Linux" ]; then
     echo "Linux mode"
 
     # List of binaries to install
-    echo "List of binaries to install on Linux: git emacs-nox nvim htop compton"
+    echo "List of binaries to install on Linux: git emacs-nox nvim htop compton feh gpick hsetroot"
 
     ##
     # X11
@@ -92,6 +92,10 @@ if [ "$(uname 2> /dev/null)" = "Linux" ]; then
     # i3
     rm $rmflags ~/.config/i3
     ln $lnflags ~/.dotfiles/i3 ~/.config/i3
+
+    # i3status
+    rm $rmflags ~/.config/i3status
+    ln $lnflags ~/.dotfiles/i3status ~/.config/i3status
 
     # screen layout
     # rm $rmflags ~/.screenlayout
