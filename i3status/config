@@ -1,7 +1,7 @@
 general {
         output_format = "dzen2"
         colors = true
-        interval = 5
+        interval = 1
 }
 
 # order += "ipv6"
@@ -12,10 +12,9 @@ general {
 # order += "wireless wlan0"
 # order += "ethernet eth0"
 # order += "battery 0"
- order += "cpu_temperature 0"
+# order += "cpu_temperature 0"
 # order += "load"
 # order += "tztime local"
-# order += "tztime berlin"
 
 wireless wlan0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"

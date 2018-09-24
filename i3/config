@@ -59,6 +59,14 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 
+# Test Gaps
+smart_gaps on
+gaps inner 10
+gaps outer 0
+
+hide_edge_borders smart_no_gaps
+
+
 # move focused window
 #bindsym $mod+shift+h move left
 #bindsym $mod+shift+j move down
@@ -143,6 +151,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+l exec "i3lock"
 
 # resize window (you can also use the mouse for that)
 # mode "resize" {
@@ -170,7 +179,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 3s
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -197,9 +206,11 @@ bar {
     #status_command i3blocks -c /home/booker/.i3/i3blocks.conf
 	status_command i3status -C ~/.config/i3status/config
 	
+	height 30
+
 	colors {
-	background $bg-color
-    separator $bg-color
+		background $bg-color
+    	separator $bg-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
