@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 rmflags="-ivr"
 if [ "$1" = "--force" ]
 then
@@ -11,8 +12,17 @@ if [ "$(uname 2> /dev/null)" != "Linux" ]; then
 fi
 mkdir ~/.config
 
+
+
+
 ## LINUX
 if [ "$(uname 2> /dev/null)" = "Linux" ]; then
+
+    echo "Linux mode"
+
+    # List of binaries to install
+    echo "List of binaries to install on Linux: git emacs-nox nvim htop compton feh gpick hsetroot"
+
     ##
     # X11
     #echo "Link: ~/.Xresources -> ~/.dotfiles/x/Xresources"
@@ -67,8 +77,8 @@ if [ "$(uname 2> /dev/null)" = "Linux" ]; then
     #ln $lnflags ~/.dotfiles/parcellite/parcelliterc ~/.config/parcellite/parcelliterc
 
     # nvim
-    rm $rmflags ~/.config/nvim
-    ln $lnflags ~/.dotfiles/nvim ~/.config/nvim
+    # rm $rmflags ~/.config/nvim
+    # ln $lnflags ~/.dotfiles/nvim ~/.config/nvim
 
     #echo "Link: ~/.inputrc -> ~/.dotfiles/zsh/inputrc"
     #rm $rmflags ~/.inputrc
@@ -83,26 +93,47 @@ if [ "$(uname 2> /dev/null)" = "Linux" ]; then
     rm $rmflags ~/.config/i3
     ln $lnflags ~/.dotfiles/i3 ~/.config/i3
 
+    # i3status
+    rm $rmflags ~/.config/i3status
+    ln $lnflags ~/.dotfiles/i3status ~/.config/i3status
+
     # screen layout
-    rm $rmflags ~/.screenlayout
-    ln $lnflags ~/.dotfiles/screenlayout ~/.screenlayout
+    # rm $rmflags ~/.screenlayout
+    # ln $lnflags ~/.dotfiles/screenlayout ~/.screenlayout
 
     # screen layout
     rm $rmflags ~/.config/compton.conf
-    ln $lnflags ~/.dotfiles/compton.conf ~/.config/compton.conf
+    ln $lnflags ~/.dotfiles/compton/compton.conf ~/.config/compton.conf
 
     # feh
-    rm $rmflags ~/.fehbg
-    ln $lnflags ~/.dotfiles/fehbg ~/.fehbg
+    # rm $rmflags ~/.fehbg
+    # ln $lnflags ~/.dotfiles/fehbg ~/.fehbg
 
     # Xresources
-    rm $rmflags ~/.Xresources
-    ln $lnflags ~/.dotfiles/Xresources ~/.Xresources
+    # rm $rmflags ~/.Xresources
+    # ln $lnflags ~/.dotfiles/Xresources ~/.Xresources
 
     # Xinit
-    rm $rmflags ~/.xinitrc
-    ln $lnflags ~/.dotfiles/xinitrc ~/.xinitrc
+    # rm $rmflags ~/.xinitrc
+    # ln $lnflags ~/.dotfiles/xinitrc ~/.xinitrc
+else
+    echo "macOS mode"
+
+    # vscode macOS
+    rm $rmflags ~/Library/Application\ Support/Code/User/snippets
+    rm $rmflags ~/Library/Application\ Support/Code/User/settings.json
+    ln $lnflags ~/.dotfiles/vscode/snippets ~/Library/Application\ Support/Code/User/
+    ln $lnflags ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/
 fi
+
+# zsh
+rm $rmflags ~/.zshrc
+cp ~/.dotfiles/zsh/secrets.zsh.dist ~/.secrets.zsh
+ln $lnflags ~/.dotfiles/zsh/zshrc ~/.zshrc
+
+# git
+rm $rmflags ~/.gitconfig
+ln $lnflags ~/.dotfiles/git/gitconfig ~/.gitconfig
 
 # vim
 #echo "Link: ~/.vimrc -> ~/.dotfiles/vim/vimrc"
@@ -117,26 +148,7 @@ fi
 #rm $rmflags ~/.vim
 #ln $lnflags ~/.dotfiles/vim/vim ~/.vim
 
-# zsh
-rm $rmflags ~/.zshrc
-rm $rmflags ~/.zshrc
-ln $lnflags ~/.dotfiles/zsh/zshrc ~/.zshrc
-
-#echo "Link: ~/.zshenv -> ~/.dotfiles/zsh/zshenv"
-#rm $rmflags ~/.zshenv
-#ln $lnflags ~/.dotfiles/zsh/zshenv ~/.zshenv
-
-# git
-rm $rmflags ~/.gitconfig
-ln $lnflags ~/.dotfiles/git/gitconfig ~/.gitconfig
-
 # tmux
 #echo "Link: ~/.tmux.conf -> ~/.dotfiles/tmux/tmux.conf"
 #rm $rmflags ~/.tmux.conf
 #ln $lnflags ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-
-# vscode macOS
-rm $rmflags ~/Library/Application\ Support/Code/User/snippets
-rm $rmflags ~/Library/Application\ Support/Code/User/settings.json
-ln $lnflags ~/.dotfiles/vscode/snippets ~/Library/Application\ Support/Code/User/
-ln $lnflags ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json

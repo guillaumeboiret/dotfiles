@@ -30,20 +30,23 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Aliases
-alias ls="gls --group-directories-first --color=auto"  # Installed with `brew install coreutils
+#alias ls="gls --group-directories-first --color=auto"  # Installed with `brew install coreutils
 alias l="ls -lh"
-#alias ne="emacs -nw"
 alias ne="nvim"
 alias la="l -a"
 alias pb="cd $HOME/phantombuster"
 alias v="vim"
 alias sudo="sudo "
 alias brewski='brew update && brew upgrade && brew cleanup; brew prune; brew doctor;'
-alias t="tmux siurce-file ~/.tmux.conf"
+alias t="tmux source-file ~/.tmux.conf"
 alias i3config="v ~/.config/i3/config"
 alias zshconfig="v ~/.zshrc"
+<<<<<<< HEAD
 alias dotconfig="v ~/.dotfiles"
 alias vlc="~/Applications/VLC.app/Contents/MacOS/VLC"
+=======
+alias dot="cd ~/.dotfiles"
+>>>>>>> 350b5220701f683edde7bdfbf7e27af981ae4381
 
 ## Env
 export EDITOR="/usr/bin/vim"
@@ -52,9 +55,13 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export NODE_PATH="$HOME/.node/node_modules"
 export PATH="$HOME/.node/bin:$PATH"
+<<<<<<< HEAD
 export PATH="$HOME/.cargo/bin:$PATH"
 
 source ~/.dotfiles/zsh/secrets.zsh
+=======
+source ~/.secrets.zsh
+>>>>>>> 350b5220701f683edde7bdfbf7e27af981ae4381
 
 # ssh-agent
 # ---------

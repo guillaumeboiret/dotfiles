@@ -59,6 +59,14 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 
+# Test Gaps
+smart_gaps on
+gaps inner 10
+gaps outer 0
+
+hide_edge_borders smart_no_gaps
+
+
 # move focused window
 #bindsym $mod+shift+h move left
 #bindsym $mod+shift+j move down
@@ -82,7 +90,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -95,7 +103,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 set $workspace1 "1 "
 set $workspace2 "2 "
@@ -143,6 +151,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+l exec "i3lock"
 
 # resize window (you can also use the mouse for that)
 # mode "resize" {
@@ -170,7 +179,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 3s
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -190,15 +199,18 @@ client.focused_inactive $inactive-bg-color $inactive-bg-color  $inactive-text-co
 client.urgent           $urgent-bg-color   $urgent-bg-color    $text-color #00ff00
 
 bar {
-        position bottom
+    position bottom
 
 	#status_command i3status
-        status_command i3blocks -c ~/.config/i3blocks/config
-  	
-        #status_command i3blocks -c /home/booker/.i3/i3blocks.conf
+    #status_command i3blocks -c ~/.config/i3blocks/config
+    #status_command i3blocks -c /home/booker/.i3/i3blocks.conf
+	status_command i3status -C ~/.config/i3status/config
+	
+	height 30
+
 	colors {
-	background $bg-color
-    separator $bg-color
+		background $bg-color
+    	separator $bg-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -206,20 +218,25 @@ bar {
 	}
 }
 
-# Guillaume's configuration
+# Alt tab
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+# Wallpaper color
+exec_always hsetroot -solid "#1A343C"
 
+# Change window and alt keys
+exec_always setxkbmap -option altwin:swap_alt_win
+
+# Compisiting renderer
+#exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 exec_always pkill compton && compton --config ~/.config/compton.conf -b
-exec firefox
+
+# NOT CONFIGURED
 #exec --no-startup-id i3-msg 'workspace $workspace2;'
-exec_always redshift -O 4000K
-#exec_always ~/.screenlayout/1680x1050-1.sh
-#exec_always ~/.screenlayout/1680x1050-2.sh
 #exec_always feh --bg-scale /home/guillaume/Pictures/wallpaper/wallpaper-current
-exec nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
-exec nm-applet
+#exec nm-applet
+
+# TODO
+# - change FN and CTRL_L exec_always setxkbmap -option altwin:swap_alt_win
+# - 
