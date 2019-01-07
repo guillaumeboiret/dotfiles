@@ -12,17 +12,16 @@ if [ "$(uname 2> /dev/null)" != "Linux" ]; then
 fi
 mkdir ~/.config
 
-
-
-
 ## LINUX
 if [ "$(uname 2> /dev/null)" = "Linux" ]; then
 
     echo "Linux mode"
 
     # List of binaries to install
-    echo "List of binaries to install on Linux: git emacs-nox nvim htop compton feh gpick hsetroot"
+    sudo apt install git emacs-nox neovim htop compton feh gpick hsetroot curl autoconf 
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+    
     ##
     # X11
     #echo "Link: ~/.Xresources -> ~/.dotfiles/x/Xresources"
