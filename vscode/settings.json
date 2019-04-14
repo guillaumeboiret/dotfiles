@@ -15,7 +15,7 @@
 	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
 	"editor.wrappingIndent": "same",
 	"git.confirmSync": false,
-	"editor.multiCursorModifier": "alt",
+	"editor.multiCursorModifier": "ctrlCmd",
 	"workbench.iconTheme": "eq-material-theme-icons",
 	"workbench.fontAliasing": "antialiased",
 	"C_Cpp.intelliSenseEngine": "Default",
@@ -30,7 +30,6 @@
 	},
 	"terminal.integrated.fontSize": 17,
 	"editor.formatOnSave": false,
-	"editor.cursorStyle": "underline",
 	"editor.autoSurround": "never",
 	"editor.letterSpacing": 1,
 	"gitlens.currentLine.enabled": false,
