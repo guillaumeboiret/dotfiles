@@ -60,7 +60,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 
 # Test Gaps
-smart_gaps on
+#smart_gaps on
 gaps inner 10
 gaps outer 0
 
