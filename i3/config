@@ -230,7 +230,7 @@ exec_always hsetroot -solid "#1A343C"
 
 # Compisiting renderer
 #exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-#exec_always pkill compton && compton --config ~/.config/compton.conf -b
+exec_always pkill compton && compton --config ~/.config/compton.conf -b
 
 # NOT CONFIGURED
 #exec --no-startup-id i3-msg 'workspace $workspace2;'
