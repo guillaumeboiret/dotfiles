@@ -13,19 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:San Francisco Display 12
-font pango: Ubuntu Mono Light 10
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+font pango:San Francisco Display 10
+#font pango: Ubuntu Mono Light 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -38,7 +27,6 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity 85 -bw 0 -bc $bg-color -bg $bg-color -fg $text-color -hlbg $bg-color -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+d exec dmenu_run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -53,7 +41,6 @@ bindsym $mod+d exec dmenu_run
 #bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
@@ -65,7 +52,6 @@ gaps inner 10
 gaps outer 0
 
 hide_edge_borders smart_no_gaps
-
 
 # move focused window
 #bindsym $mod+shift+h move left
@@ -97,7 +83,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -145,41 +131,43 @@ assign [class="Slack"] $workspace8
 assign [class="Nautilus"] $workspace9
 assign [class="Spotify"] $workspace7
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# lock x session
 bindsym $mod+Shift+l exec "i3lock"
 
 # resize window (you can also use the mouse for that)
- mode "resize" {
-         # These bindings trigger as soon as you enter the resize mode
+mode "resize" {
+        # These bindings 
+	    # trigger as soon as you enter the resize mode
+	    set $resize_delta 3
 
-         # Pressing left will shrink the window’s width.
-         # Pressing right will grow the window’s width.
-         # Pressing up will shrink the window’s height.
-         # Pressing down will grow the window’s height.
-         bindsym j resize shrink width 10 px or 10 ppt
-         bindsym k resize grow height 10 px or 10 ppt
-         bindsym l resize shrink height 10 px or 10 ppt
-         bindsym semicolon resize grow width 10 px or 10 ppt
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        #bindsym j resize shrink width 10 px or 10 ppt
+        #bindsym k resize grow height 10 px or 10 ppt
+        #bindsym l resize shrink height 10 px or 10 ppt
+        #bindsym semicolon resize grow width 10 px or 10 ppt
 
-         # same bindings, but for the arrow keys
-#         bindsym Left resize shrink width 10 px or 10 ppt
-#         bindsym Down resize grow height 10 px or 10 ppt
-#         bindsym Up resize shrink height 10 px or 10 ppt
-#         bindsym Right resize grow width 10 px or 10 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width $resize_delta px
+        bindsym Down resize shrink height $resize_delta px
+        bindsym Up resize grow height $resize_delta px
+        bindsym Right resize grow width $resize_delta px
 
-         # back to normal: Enter or Escape
-         bindsym Return mode "default"
-         bindsym Escape mode "default"
- }
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 2s
+for_window [class="^.*"] border pixel 3s
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -193,27 +181,22 @@ set $indicator-color	 $urgent-bg-color
 
 # window colors
 #                       border              background         text                  indicator
-client.focused          $bg-color           $bg-color          $text-color           $indicator-color
+client.focused          $bg-color            $bg-color          $text-color           $indicator-color
 client.unfocused        $inactive-bg-color $inactive-bg-color  $inactive-text-color  $indicator-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color  $inactive-text-color  $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color    $text-color #00ff00
 
 bar {
     position bottom
-
-	#status_command i3status
-    #status_command i3blocks -c ~/.config/i3blocks/config
-    #status_command i3blocks -c /home/booker/.i3/i3blocks.conf
-	status_command i3status -C ~/.config/i3status/config
+    height 20
+    status_command i3status -C ~/.config/i3status/config
 	
-	height 20
-
 	colors {
 		background $bg-color
     	separator $bg-color
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+		inactive_workspace $bg-color          $bg-color          $inactive-text-color
 		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	}
 }
@@ -230,7 +213,8 @@ exec_always hsetroot -solid "#1A343C"
 
 # Compisiting renderer
 #exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec_always pkill compton && compton --config ~/.config/compton.conf -b
+exec_always pkill compton && 
+exec_alwars compton --config ~/.config/compton.conf -b
 
 # NOT CONFIGURED
 #exec --no-startup-id i3-msg 'workspace $workspace2;'
