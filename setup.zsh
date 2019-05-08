@@ -22,6 +22,7 @@ CONFIG_FILE[i3]=".config/i3"
 CONFIG_FILE[polybar]=".config/polybar"
 CONFIG_FILE[compton]=".config/compton"
 CONFIG_FILE[gtk-3.0]=".config/gtk-3.0"
+CONFIG_FILE[dconf]=".config/dconf"
 
 echo "-> Removing existing files..."
 for key val in ${(kv)CONFIG_FILE}; do
