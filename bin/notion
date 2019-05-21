@@ -1,0 +1,3 @@
+#!/bin/sh
+
+chromium --app=https://www.notion.so/phantombuster/c9fac6f8cb434bf9b84e63867bdc3a03\?v\=8ccabf8496aa49bba597bcc54e13c547
