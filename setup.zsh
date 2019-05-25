@@ -16,6 +16,8 @@ CONFIG_FILE[fehbg]=".fehbg"
 #CONFIG_FILE[xinitrc]=".xinitrc"
 #CONFIG_FILE[vim/vimrc]=".vimrc"
 CONFIG_FILE[zsh/zshrc]=".zshrc"
+CONFIG_FILE[zsh/zsh_aliases]=".zsh_aliases"
+CONFIG_FILE[zsh/zsh_exports]=".zsh_exports"
 
 # Config
 CONFIG_FILE[htop]=".config/htop"
