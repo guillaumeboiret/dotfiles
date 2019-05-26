@@ -11,13 +11,15 @@ CONFIG_FILE[icons]=".icons"
 CONFIG_FILE[fonts]=".fonts"
 CONFIG_FILE[fonts]=".local/share/fonts"
 CONFIG_FILE[screenlayout]=".screenlayout"
-CONFIG_FILE[fehbg]=".fehbg"
+CONFIG_FILE[x/XCompose]=".XCompose"
 #CONFIG_FILE[Xresources]=".Xresources"
 #CONFIG_FILE[xinitrc]=".xinitrc"
-#CONFIG_FILE[vim/vimrc]=".vimrc"
+
+CONFIG_FILE[vim/vimrc]=".vimrc"
 CONFIG_FILE[zsh/zshrc]=".zshrc"
 CONFIG_FILE[zsh/zsh_aliases]=".zsh_aliases"
 CONFIG_FILE[zsh/zsh_exports]=".zsh_exports"
+CONFIG_FILE[zsh/oh-my-zsh-theme/guinesis.zsh-theme]=".oh-my-zsh/themes/guinesis.zsh-theme"
 
 # Config
 CONFIG_FILE[htop]=".config/htop"

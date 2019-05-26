@@ -20,7 +20,7 @@ font pango:San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+Return exec firefox 
 
 # kill focused window
@@ -47,11 +47,11 @@ bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 
 # Gaps
-smart_gaps on
-gaps inner 0
-gaps outer 0
-
-hide_edge_borders smart_no_gaps
+#smart_gaps on
+#gaps inner 0
+#gaps outer 0
+#
+#hide_edge_borders smart_no_gaps
 
 # move focused window
 #bindsym $mod+shift+h move left
@@ -187,6 +187,9 @@ client.unfocused        $inactive-bg-color $inactive-bg-color  $inactive-text-co
 client.focused_inactive $inactive-bg-color $inactive-bg-color  $inactive-text-color  $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color    $text-color #00ff00
 
+# nm-applet
+exec_always pkill nm-applet ; nm-applet &
+
 # Polybar
 exec_always pkill polybar ; polybar example -r
 
@@ -195,21 +198,16 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 # Wallpaper color
-#exec_always hsetroot -solid "#1A343C"
 exec_always nitrogen --restore
 
 # Change window and alt keys
 #exec_always setxkbmap -option altwin:swap_alt_win
 
 # Compisiting renderer
-#exec --no-startup-id compton -cCGb --backend glx --vsync opengl
-exec_always pkill compton ; compton --config ~/.config/compton/config -b
+# exec --no-startup-id compton -cCGb --backend glx --vsync opengl
+#exec_always pkill compton ; compton --config ~/.config/compton/config -b
 
-# NOT CONFIGURED
-#exec --no-startup-id i3-msg 'workspace $workspace2;'
-# exec_always feh --bg-scale $HOME/.dotfile/wallpapers/i3-current-image
-#exec nm-applet
+# Keyboard configurations
+exec setxkbmap -option altwin:swap_lalt_lwin # Swap Left alt key with Windows key 
+exec xmodmap -e "keysym Alt_R = Multi_key"
 
-# TODO
-# - change FN and CTRL_L exec_always setxkbmap -option altwin:swap_alt_win
-# - 
