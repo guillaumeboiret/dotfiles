@@ -22,3 +22,6 @@ Install Mona theme. [...]
 
 ## Install NodeJS
 [...]
+
+## Source link
+https://superuser.com/questions/784248/high-dpi-settings-for-chrome-on-linux

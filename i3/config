@@ -210,4 +210,4 @@ exec_always nitrogen --restore
 # Keyboard configurations
 exec setxkbmap -option altwin:swap_lalt_lwin # Swap Left alt key with Windows key 
 exec xmodmap -e "keysym Alt_R = Multi_key"
-
+exec xset r rate 200 45
