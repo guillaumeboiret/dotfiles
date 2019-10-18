@@ -1,9 +1,0 @@
-#!/bin/sh
-choices="Monoscreen\nDualscreens"
-
-chosen=$(echo "$choices" | dmenu -i)
-
-case $chosen in
-    Monoscreen) notify-send "1" ;;
-    Dualscreens) notify-send "2" ;;
-esac

@@ -31,7 +31,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 #alias ls="gls --group-directories-first --color=auto"  # Installed with `brew install coreutils
-alias l="ls -lh"
+# alias ls='/usr/local/bin/gls -h --group-directories-first'
+alias l="ls -lh --group-directories-first"
 alias ne="nvim"
 alias la="l -a"
 alias pb="cd $HOME/phantombuster"

@@ -6,7 +6,6 @@
 	"editor.renderWhitespace": "all",
 	"editor.scrollBeyondLastLine": false,
 	"editor.minimap.enabled": false,
-	"editor.dragAndDrop": true,
 	"files.trimTrailingWhitespace": true,
 	"files.autoSave": "off",
 	// External Terminal
@@ -15,37 +14,41 @@
 	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
 	"editor.wrappingIndent": "same",
 	"git.confirmSync": false,
-	"editor.multiCursorModifier": "ctrlCmd",
 	"workbench.iconTheme": "eq-material-theme-icons",
 	"workbench.fontAliasing": "antialiased",
 	"C_Cpp.intelliSenseEngine": "Default",
-	"explorer.confirmDelete": false,
 	"terminal.integrated.cursorStyle": "underline",
 	"git.autofetch": true,
 	"editor.fontFamily": "UbuntuMonoNerdFontCM-Regular",
-	"editor.fontSize": 20,
+	"editor.fontSize": 16,
 	"editor.tabSize": 8,
 	"workbench.colorCustomizations": {
 		"editorIndentGuide.activeBackground": "#f0f0f049"
 	},
 	"terminal.integrated.fontSize": 17,
 	"editor.formatOnSave": false,
-	"editor.autoSurround": "never",
 	"editor.letterSpacing": 1,
 	"gitlens.currentLine.enabled": false,
 	"gitlens.codeLens.recentChange.enabled": false,
 	"gitlens.codeLens.authors.enabled": false,
 	"gitlens.gitExplorer.files.layout": "list",
 	"editor.renderControlCharacters": true,
-	"breadcrumbs.enabled": false,
-	"explorer.openEditors.visible": 0,
+	"breadcrumbs.enabled": true,
 	"emmet.includeLanguages": {
 		"vue-html": "html",
 		"javascript": "javascriptreact"
 	},
 	"emmet.triggerExpansionOnTab": true,
 	"jshint.enable": false,
-	"explorer.confirmDragAndDrop": false,
 	"terminal.integrated.rendererType": "dom",
-	"gitlens.views.repositories.files.layout": "list"
+	"gitlens.views.repositories.files.layout": "list",
+	"workbench.colorTheme": "Visual Studio Light",
+	"jira-plugin.baseUrl": "https://phantombuster.atlassian.net",
+	"jira-plugin.username": "guillaume@phantombuster.com",
+	"vsicons.dontShowNewVersionMessage": true,
+	"explorer.openEditors.visible": 0,
+	"markdown-preview-enhanced.liveUpdate": true,
+	"workbench.tree.indent": 30,
+	"git.suggestSmartCommit": false,
+	"editor.formatOnPaste": true
 }
